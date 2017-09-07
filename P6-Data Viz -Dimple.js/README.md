@@ -40,7 +40,7 @@ ggplot(data = airlines,
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 
 ```
-![Image_01](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-1-1.png?raw=true)
+![Image_01](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-1-1.png?raw=true)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE,}
 
 a_new <- airlines %>%
@@ -98,8 +98,8 @@ ggplot(data = airlines_sub,
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_02](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-4-1.png?raw=true)
-![Image_03](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-4-2.png?raw=true)
+![Image_02](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-4-1.png?raw=true)
+![Image_03](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-4-2.png?raw=true)
 
 The frist thing which is noticed is that "American Eagle Airlines"  do not have data after 2014.
 Further analyis on delay was made by potting the different delays with time for each carrier.
@@ -117,35 +117,35 @@ ggplot(data = airlines_sub,
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_04](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-5-1.png?raw=true)
+![Image_04](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-5-1.png?raw=true)
 ```{r, fig.width=13, fig.height=9}
 ggplot(data = airlines_sub,
        aes(x = year, y = wthr_delay)) +
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_05](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-5-2.png?raw=true)
+![Image_05](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-5-2.png?raw=true)
 ```{r, fig.width=13, fig.height=9}
 ggplot(data = airlines_sub,
        aes(x = year, y = ns_delay)) +
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_06](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-5-3.png?raw=true)
+![Image_06](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-5-3.png?raw=true)
 ```{r, fig.width=13, fig.height=9}
 ggplot(data = airlines_sub,
        aes(x = year, y = sec_delay)) +
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_07](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-5-4.png?raw=true)
+![Image_07](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-5-4.png?raw=true)
 ```{r, fig.width=13, fig.height=9}
 ggplot(data = airlines_sub,
        aes(x = year, y = lt_air_delay)) +
   geom_line(aes(color = carrier_name)) +
   scale_x_continuous(limits=c(2003, 2017), breaks=c(2003:2017))
 ```
-![Image_08](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/unnamed-chunk-5-5.png?raw=true)
+![Image_08](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/unnamed-chunk-5-5.png?raw=true)
 
 From the visualizations it's clearly visible that "security delay"" has the least amount of contribution among all the delay types. So, our focus will be on the other delay types.
 
@@ -164,7 +164,7 @@ Moving on to the delay section, it's seen that delays caused by carrier, NAS & L
 
 Though with time the contribution in delay from NAS side has reduced, the other two i.e. the contribution from Airlines Carrier & Late Arrival of flight,  has still a contribution of 30-40%.
 
-Data Visualization (dimple.js)
+**Data Visualization (dimple.js)**
 
 A re-evaluation of the design was made, and still considered that a line chart is the best way to represent a trend of over time. Each line is given a specific color in order to visually encode each airline in a better fashion.
 In order to improve the initial data visualization I improved it with dimple.js in the following ways:
@@ -176,7 +176,7 @@ b. Overlay scatter plot points to emphasize each airline's individual data point
 c. Add transparency, as some areas of the graph (2010-2012) have considerable overlap.
 
 This initial iteration can be viewed at index-initial.html, or below:
-![Initial](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/localhost%208000%20main_01.html.png?raw=true)
+![Initial](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/localhost%208000%20main_01.html.png?raw=true)
 
 **Feedback**
 
@@ -226,7 +226,7 @@ v. Excluded the security delay related chart as the target is to showcase the ma
 
 Below is the final form of the data visualization:
 
-![Final Image](https://github.com/sekhar989/Data-Visualizations-Dimple/blob/master/image/plot.png?raw=true)
+![Final Image](https://github.com/sekhar989/Udacity-DAND/blob/master/P6-Data%20Viz%20-Dimple.js/images/plot.png?raw=true)
 
 **Resources**
 
