@@ -111,22 +111,22 @@ times with different parameter selections. Below are the details for each algori
 i. *Gaussian NB*: No parameter tuning was done for GaussianNB
 
 ii. *Random Forest Classifier*: Random Forest is an ensemble learning method for classification. It runs multiple
-decision tree algorithms & gives a cumulative output. Below are the results:
+decision tree algorithms & gives a cumulative output. Below are the results:  
 
   a. Mean Accuracy: **0.861111111111**  
   b. Mean Precision: **0.461904761905**  
   c. Mean Recall: **0.461904761905**  
 
-Tuned parameters are mentioned below:
+Tuned parameters are mentioned below:  
   a. n_estimators = [10, 20, 50, 100]  
   b. min_samples_split = [2, 3, 4, 5]  
  
 iii. *SVC (Support Vector Classifier)*: SVC is a supervised learning model with associated learning algorithms that
-analyze data used for classification. Tuned parameters are mentioned below:
+analyze data used for classification. Tuned parameters are mentioned below:  
   a. kernel = ["rbf"]  
   b. C = [1, 10, 20, 30, 50]  
 
-Each algorithm was ran for 20 times. Below are the best results for each algorithm.
+Each algorithm was ran for 20 times. Below are the best results for each algorithm.  
  i. *Gaussian NB*:
  
    Report:  
@@ -135,42 +135,41 @@ Each algorithm was ran for 20 times. Below are the best results for each algorit
      1.0 0.60 0.50 0.55 6  
      avg / total 0.89 0.89 0.89 47  
      
-ii. *Random Forest Classifier*:
+ii. *Random Forest Classifier*:  
 
-Best Paramters: {'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__n_estimators': 50}
+  Best Paramters: {'randomforestclassifier__min_samples_split': 2, 'randomforestclassifier__n_estimators': 50}
   Report:  
     precision recall f1-score support  
     0.0 0.95 1.00 0.98 41  
     1.0 1.00 0.67 0.80 6  
     avg / total 0.96 0.96 0.95 47  
     
-iii. *SVC*:
+iii. *SVC*:  
 
-Best Paramters: {'svc__kernel': 'rbf', 'svc__C': 1}
+  Best Paramters: {'svc__kernel': 'rbf', 'svc__C': 1}
   Report:  
    precision recall f1-score support  
    0.0 0.87 1.00 0.93 41  
    1.0 0.00 0.00 0.00 6  
    avg / total 0.76 0.87 0.81 47  
 
-*Final Algorithm*:
-Finally, based on the accuracy scores, precision scores & recall scores of GaussianNB, Rnadom Forest Classifer & SVC, GaussiaNB & Random Forest Classifier(min_samples_split: 2, n_estimators: 50) were chosen. SVC had zero precision
-score & recall score for POI = 1.
+*Final Algorithm*:  
+  Finally, based on the accuracy scores, precision scores & recall scores of GaussianNB, Rnadom Forest Classifer & SVC, GaussiaNB & Random Forest Classifier(min_samples_split: 2, n_estimators: 50) were chosen. SVC had zero precision
+score & recall score for POI = 1.  
+  Now each algorithm with the selected parameters are ran with a ***KFold Split = 3*** for 20 iterations. After 20 iterations
+the mean accuracy, precision & recall are calculated. Below is the result:  
 
-Now each algorithm with the selected parameters are ran with a ***KFold Split = 3*** for 20 iterations. After 20 iterations
-the mean accuracy, precision & recall are calculated. Below is the result:
-
-1. *GaussianNB*:
+1. *GaussianNB*:  
   a) **Mean Accuracy: 0.86463151403**  
   b) **Mean Precision: 0.466666666667**  
   c) **Mean Recall: 0.414285714286**  
 
-2. *Random Forest Classifier(min_samples_split: 4, n_estimators: 50)*:
+2. *Random Forest Classifier(min_samples_split: 4, n_estimators: 50)*:  
   a) **Mean Accuracy: 0.871569534382**  
   b) **Mean Precision: 0.222222222222**  
   c) **Mean Recall: 0.111111111111**  
 
-3. *SVC*:
+3. *SVC*:  
   a) **Mean Accuracy: 0.871569534382**  
   b) **Mean Precision: 0.0**  
   c) **Mean Recall: 0.0**  
@@ -185,7 +184,7 @@ tuning parameter. So no tuning is being done for the algorithm.
 
 **Validation**:
  Validation is the process of checking if the model which is being created is a generalized model, i.e. It’s not only
-working on the trained data set it’s working on other similar data sets as well. To achieve this we divide the data set at hand into two parts.
+working on the trained data set it’s working on other similar data sets as well. To achieve this we divide the data set at hand into two parts.  
   A. `Training Set`  
   B. `Validation Set`  
   We create train-test partitions to provide us honest assessments of the performance of our predictive models. The data at hand is almost similar to the data which the algorithm will be fed with in the real world. Our target is to make sure the algorithm will work well enough with the real world data. As we don’t have real world data to test with, we divide the data set at hand into two parts. We train the classifier with one part and check how the classifier is working with the test part of the data set.  
@@ -211,10 +210,11 @@ We get a final score on the GaussianNB:
 
 **Evaluation**:
 
- Evaluation Metrics is a metric which helps a person to understand how the model is working.
-  `Precision Score: Precision Score is the ratio of true positives to the records that are POIs, essentially describing how often 'false alarms' are not raised.`
-  `Accuracy Score: Accuracy Score is the ratio of right predictions & wrong predictions`  
-  `Recall Score: Recall is the ratio of true positives to the people who are tagged as POIs.`  
+Evaluation Metrics is a metric which helps a person to understand how the model is working.
+ - Precision Score: Precision Score is the ratio of true positives to the records that are POIs, essentially describing how often 'false alarms' are not raised.
+ - Accuracy Score: Accuracy Score is the ratio of right predictions & wrong predictions
+ - Recall Score: Recall is the ratio of true positives to the people who are tagged as POIs.
+ 
   Below are the mean results after the final run of GaussianNB for 100 iterations:  
   ***Mean Accuracy: 0.86463151403  
   Mean Precision: 0.466666666667  
