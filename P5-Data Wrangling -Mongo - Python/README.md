@@ -49,22 +49,22 @@ Inconcistencies were noticed in:
 
 ### 1. Postcodes/Zip-Codes
 Postcodes/Zip-codes were present under *`addr:postcode`* tag. Kolkata postcodes are of 6-digits and ranges from *`700001`* to *`700120`*.
-While checking the data, several inconsistencies were noticed in the postcodes present in the raw dataset. e.g.: ***`7017`*** (less than 6-digits), ***`'700 073'`***, ***`'7000 026'`***.
+While checking the data, several inconsistencies were noticed in the postcodes present in the raw dataset. e.g.: *`7017`* (less than 6-digits), *`700 073`*, *`7000 026`*.
 
 ### 2. Phone Numbers
-Phone numbers were present under ***`phone`***. Issues viz. ***`+91906285598`***, ***`033 2227 2625`***.
+Phone numbers were present under ***`phone`*** . Issues viz. ***`+91906285598`*** , ***`033 2227 2625`*** .
 ***`+91`*** & gaps along with dash(-) should be removed from phone numbers
 
 
 ### 3. Street Names
-There were inconsistencies with street name abbreviations.Issues in Streets viz. ***`Rameswar Shaw Rd`*** , ***`Karbala Tank Ln`***. Acronyms like ***`Rd`*** & ***`Ln`*** are used, which are actually ***`Road`*** & ***`Lane`***.
+There were inconsistencies with street name abbreviations.Issues in Streets viz. ***`Rameswar Shaw Rd`*** , ***`Karbala Tank Ln`*** . Acronyms like ***`Rd`*** & ***`Ln`*** are used, which are actually ***`Road`*** & ***`Lane`*** .
 
 In depth studies related to isseues were made using the *`audit_db.py`* program.
 
 ### Special Tags
 There were quite a number of `tag k-v pairs`, which are present only once. 
 They are some special tags, which came into the picture just for a specific scenario.
-e.g.: ***`toilets:disposal`***, ***`name:ml`***, ***`name:hr`*** etc.
+e.g.: ***`toilets:disposal`*** , ***`name:ml`*** , ***`name:hr`*** etc.
 
 As part of the cleaning process, a manual selection of `tag k-v pairs` was made based on the amount of occurence.
 Tags which have occured less than equal to 4-times, were ignored.
